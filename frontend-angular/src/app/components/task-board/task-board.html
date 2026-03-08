@@ -31,7 +31,7 @@
         <div class="task-list">
             <app-task-card *ngFor="let task of getTasksByStatus('DONE')" [task]="task" (delete)="onDeleteTask($event)"
                 (statusChange)="onStatusChange($event)"></app-task-card>
-            <div *ngif="getTasksByStatus('DONE').length === 0" class="empty-state">No completed tasks.</div>
+            <div *ngIf="getTasksByStatus('DONE').length === 0" class="empty-state">No completed tasks.</div>
         </div>
     </div>
 </div>

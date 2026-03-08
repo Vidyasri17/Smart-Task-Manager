@@ -77,4 +77,5 @@ Open your browser and navigate to `http://localhost:4200` to interact with the S
 
 ## Screenshots
 
-*(You can add screenshots of your application here)*
+![alt text](Demo.png)
+![alt text](Interface.png)
