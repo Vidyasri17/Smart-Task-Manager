@@ -1,0 +1,37 @@
+<div class="task-board">
+    <div class="column column-todo">
+        <div class="column-header">
+            <h3>To Do</h3>
+            <span class="task-count">{{ getTasksByStatus('TODO').length }}</span>
+        </div>
+        <div class="task-list">
+            <app-task-card *ngFor="let task of getTasksByStatus('TODO')" [task]="task" (delete)="onDeleteTask($event)"
+                (statusChange)="onStatusChange($event)"></app-task-card>
+            <div *ngIf="getTasksByStatus('TODO').length === 0" class="empty-state">No tasks to do.</div>
+        </div>
+    </div>
+
+    <div class="column column-in-progress">
+        <div class="column-header">
+            <h3>In Progress</h3>
+            <span class="task-count">{{ getTasksByStatus('IN_PROGRESS').length }}</span>
+        </div>
+        <div class="task-list">
+            <app-task-card *ngFor="let task of getTasksByStatus('IN_PROGRESS')" [task]="task"
+                (delete)="onDeleteTask($event)" (statusChange)="onStatusChange($event)"></app-task-card>
+            <div *ngIf="getTasksByStatus('IN_PROGRESS').length === 0" class="empty-state">No tasks in progress.</div>
+        </div>
+    </div>
+
+    <div class="column column-done">
+        <div class="column-header">
+            <h3>Done</h3>
+            <span class="task-count">{{ getTasksByStatus('DONE').length }}</span>
+        </div>
+        <div class="task-list">
+            <app-task-card *ngFor="let task of getTasksByStatus('DONE')" [task]="task" (delete)="onDeleteTask($event)"
+                (statusChange)="onStatusChange($event)"></app-task-card>
+            <div *ngif="getTasksByStatus('DONE').length === 0" class="empty-state">No completed tasks.</div>
+        </div>
+    </div>
+</div>

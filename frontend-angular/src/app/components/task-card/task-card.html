@@ -1,0 +1,16 @@
+<div class="task-card">
+    <div class="task-header">
+        <h4 class="task-title">{{ task.title }}</h4>
+        <button class="delete-btn" (click)="onDelete()">×</button>
+    </div>
+
+    <p class="task-description">{{ task.description }}</p>
+
+    <div class="task-footer">
+        <select class="status-select" [value]="task.status" (change)="onStatusChange($event)">
+            <option value="TODO">To Do</option>
+            <option value="IN_PROGRESS">In Prog</option>
+            <option value="DONE">Done</option>
+        </select>
+    </div>
+</div>
